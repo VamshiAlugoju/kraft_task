@@ -1,35 +1,45 @@
 "use client"
 import React, { useEffect } from "react";
-import {data} from "../../data"
+import {restData} from "../../data"
+const availableList = new Set( ["warangal","bengaluru","hyderabad","mumbai"])
 
-const arrlength = data.length;
-  function useData(props){
-   
-    const page =  props.page ? props.page : 1;
-    const [list,setList] = React.useState(data.slice(0,10));
+
+function useData(props){
+  
+  let arr = [];
+  const query = props.query;
+  if(availableList.has(query)){
+    arr = [...restData[query].data];
+ }
+ else{
+  arr = restData["data"].data;
+ }
+
+ const arrlength = arr.length;
+ const page =  props.page ? props.page : 1;
+    const [list,setList] = React.useState([]);
     const [loading,setLoading ] = React.useState(false);
     let hasmore = page*10 < arrlength ? true : false;
-    console.log(hasmore,page,arrlength)
+
+
+   useEffect(()=>{
+    setList([])
+   },[props.query])
 
     useEffect(()=>{
       setLoading(true);
-      console.log(page,"hello")
-      setList(prev=>{
-        const splitarr = data.slice((page-1)*10,page*10)
-        return [...new Set( [...prev,...splitarr])]
-      })
-     let ind =  setTimeout(() => {
+      let ind =  setTimeout(() => {
+        
+        console.log(arr)
           setLoading(false);
+          setList(prev=>{
+            const splitarr = arr.slice((page-1)*10,page*10)
+            return [...new Set( [...prev,...splitarr])]
+          })
       }, 1000);
-     return ()=>{
-        clearTimeout(ind)
-      }
-    },[page])
     
+    },[page,props.query])
     
-
-
-
    return {hasmore,list,page,loading}
 
   }

@@ -8,6 +8,7 @@ function HotelCard(props,ref) {
   for (let i = 0; i < props.ratings; i++) {
     let imgTag = (
       <Image
+      key={i}
         src={ab}
         // width={200}
         // height={200}
@@ -19,10 +20,10 @@ function HotelCard(props,ref) {
   }
 
   
-  // console.log( ab)
+
   return (
     <>
-      <div ref={ref} className="container mx-auto">
+      <div ref={ref} className="container mx-auto HotelCard">
         <div className=" mx-auto mb-4 flex flex-col items-center bg-white border border-gray-200 rounded-lg shadow md:flex-row md:max-w-xl hover:bg-gray-100 dark:border-gray-700 dark:bg-gray-800 dark:hover:bg-gray-700">
           <img
             className="object-cover w-full rounded-t-lg h-96 md:h-auto md:w-48 md:rounded-none md:rounded-s-lg"

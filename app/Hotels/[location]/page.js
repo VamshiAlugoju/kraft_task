@@ -11,7 +11,7 @@ export default function HotelPage(props){
     const startDate = searchParams.get("startDate")
     const endDate = searchParams.get("endDate");
 
-    console.log(startDate , endDate)
+
     
     return(
         <>
