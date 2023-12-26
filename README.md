@@ -34,6 +34,8 @@ Now open the browser for result
 - when you click a marker it shows a popup item showing the hotel name and browser automatically scrolls to the clicked hotel.
 - Responsive to every screensize.
 
+## Description
+
 - On the home page you can see a navigation bar and a list of hotels in the body.
   These items are dummy hotels.
 - In navigation bar using the search bar type any city and click the search icon to open a new page with the result.
