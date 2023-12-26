@@ -1,36 +1,42 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+ 
+ ## Deployed Site
+
+ You can see the deployed application in [https://kraft-task.vercel.app/]
 
 ## Getting Started
 
-First, run the development server:
-
+To run dev server 
+Navigate to root folder then install all the necessary dependecies and run the dev server
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+npm i 
+#or
+npm install
 
+npm run dev
+
+```
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+To run build server for more optimised application
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+After installing the dependecies run 
+```bash
+npm run build
+npm run start
+```
 
-## Learn More
+Now open the browser for result
 
-To learn more about Next.js, take a look at the following resources:
+## Features 
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- Infinite Scrolling is implemented when viewing the hotels.
+- A real time map included which show the markers of the hotels.You can controll the map , zoom it and much more.
+- when you click a marker it shows a popup item showing the hotel name and browser automatically scrolls to the clicked hotel.
+- Responsive to every screensize.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+- On the home page you can see a navigation bar and a list of hotels in the body.
+  These items are dummy hotels.
+- In navigation bar using the search bar type any city and click the search icon to open a new page with the result.
+- Currently we do not have any real time data and there is no Free API for it.I'm using mocked data.
+- But you can search for [bengaluru,hyderabad,warangal,mumbai] for some real results on the map.I've added real time
+  latitudes and longitudes  for them.For all other keywords you get a 100 dummy hotels list array with dummy lat and lng.
